@@ -44,7 +44,7 @@ jobs:
           tags: ${{ secrets.DOCKER_USERNAME }}/tp-devops-httpserver:latest
           push: ${{ github.ref == 'refs/heads/main' }}
 
-
+      # construction et tests avec Maven
       - name: Build and test with Maven
         run: mvn clean verify --file ./simple-api/pom.xml
 
