@@ -1,3 +1,1 @@
-# devops-livecoding
-
-base for GitHub Actions
+# C'est mon projet
