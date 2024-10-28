@@ -45,6 +45,11 @@ jobs:
           push: ${{ github.ref == 'refs/heads/main' }}
 
       - name: Build and test with Maven
-        run: mvn clean verify --file ./simple-api/pom.xml
+        run: mvn -B verify sonar:sonar \
+            -Dsonar.projectKey=Nico-Buff_devops-livecoding \
+            -Dsonar.organization=nico-buff \
+            -Dsonar.host.url=https://sonarcloud.io \
+            -Dsonar.login=${{ secrets.SONAR_TOKEN }} \
+            --file ./simple-api/pom.xml
 
 
